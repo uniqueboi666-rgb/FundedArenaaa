@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funded Arena</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+
+    body{
+      background:radial-gradient(circle at top,#070a12,#03050a);
+      color:#e5e7eb;
+      overflow-x:hidden;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 40px;
+      position:sticky;
+      top:0;
+      background:rgba(10,15,25,0.7);
+      backdrop-filter:blur(10px);
+    }
+
+    nav h2{color:#34d399;}
+
+    nav a{
+      color:#cbd5e1;
+      margin:0 10px;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    .btn{
+      padding:10px 16px;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      background:linear-gradient(90deg,#34d399,#38bdf8);
+      font-weight:700;
+    }
+
+    .hero{
+      text-align:center;
+      padding:120px 20px 60px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      background:linear-gradient(90deg,#34d399,#38bdf8);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    section{padding:70px 20px;max-width:1100px;margin:auto;}
+
+    .title{text-align:center;font-size:28px;margin-bottom:30px;}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.04);
+      padding:20px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .cert{
+      background:#fff;
+      color:#0f172a;
+      border-radius:14px;
+      padding:20px;
+      position:relative;
+    }
+
+    .stamp{
+      position:absolute;
+      right:15px;
+      bottom:15px;
+      border:2px solid #16a34a;
+      color:#16a34a;
+      padding:8px;
+      border-radius:50%;
+      font-size:11px;
+      font-weight:700;
+    }
+
+    .modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      justify-content:center;
+      align-items:center;
+    }
+
+    .modal-box{
+      background:#0b1220;
+      padding:25px;
+      border-radius:14px;
+      text-align:center;
+      width:320px;
+    }
+
+    .qr{width:220px;margin:10px 0;}
+
+    .upi{font-size:13px;color:#9ca3af;word-break:break-all;}
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#64748b;
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <h2>Funded Arena</h2>
+  <div>
+    <a href="#plans">Plans</a>
+    <a href="#phases">Phases</a>
+    <a href="#cert">Certificates</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="btn" onclick="openQR(49)">Get Funded</button>
+</nav>
+
+<div class="hero">
+  <h1>Get Funded. Trade Big.</h1>
+  <p>Scale your capital from $5K to $500K with premium challenges.</p>
+  <button class="btn" onclick="openQR(49)">Start Now</button>
+</div>
+
+<section id="plans">
+  <div class="title">Funding Challenges</div>
+  <div class="grid">
+    <div class="card"><h3>$5K</h3><button class="btn" onclick="openQR(49)">Pay ₹49</button></div>
+    <div class="card"><h3>$25K</h3><button class="btn" onclick="openQR(99)">Pay ₹99</button></div>
+    <div class="card"><h3>$100K</h3><button class="btn" onclick="openQR(199)">Pay ₹199</button></div>
+    <div class="card"><h3>$500K</h3><button class="btn" onclick="openQR(399)">Pay ₹399</button></div>
+  </div>
+</section>
+
+<section id="phases">
+  <div class="title">Challenge Phases</div>
+  <div class="grid">
+    <div class="card">Step 1: Evaluation</div>
+    <div class="card">Step 2: Verification</div>
+    <div class="card">Instant Funding</div>
+  </div>
+</section>
+
+<section id="cert">
+  <div class="title">Certificates</div>
+  <div class="grid">
+    <div class="cert">
+      <h3>Profit Certificate</h3>
+      <p>$12,450 Paid</p>
+      <div class="stamp">PAID</div>
+    </div>
+    <div class="cert">
+      <h3>Funding Approval</h3>
+      <p>$25,000 Verified</p>
+      <div class="stamp">APPROVED</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="title">Reviews</div>
+  <div class="grid">
+    <div class="card">"Great platform" – Rahul</div>
+    <div class="card">"Fast system" – Ankit</div>
+    <div class="card">"Smooth experience" – Sarah</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="title">Contact</div>
+  <div class="card">
+    <p>UPI: 9795449245-6@ybl</p>
+  </div>
+</section>
+
+<footer>© 2026 Funded Arena</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3>Pay via UPI</h3>
+    <img class="qr" id="qrImg" />
+    <div class="upi">UPI ID: 9795449245-6@ybl</div>
+    <button class="btn" onclick="closeQR()">Close</button>
+  </div>
+</div>
+
+<script>
+function openQR(amount){
+  const upi="9795449245-6@ybl";
+  const url=`upi://pay?pa=${upi}&pn=FundedArena&am=${amount}&cu=INR`;
+  document.getElementById("qrImg").src=
+    "https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl="+encodeURIComponent(url);
+  document.getElementById("modal").style.display="flex";
+}
+function closeQR(){
+  document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
