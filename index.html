@@ -148,7 +148,57 @@
 <section id="plans">
   <div class="title">Funding Challenges</div>
   <div class="grid">
-    <div class="card"><h3>$5K</h3><button class="btn" onclick="openQR(49)">Pay ₹49</button></div>
+    <div class="card"><h3>$5K</h3><button class="btn" onclick="openQR(49)">Pay ₹49</button></div><!-- PAYMENT SYSTEM START -->
+<div id="qrModal" style="display:none; position:fixed; inset:0; background:#000000aa; justify-content:center; align-items:center; z-index:9999;">
+  
+  <div style="background:white; padding:20px; border-radius:12px; width:300px; text-align:center;">
+    
+    <h2>Complete Payment</h2>
+
+    <p id="productName"></p>
+    <p id="amountText"></p>
+
+    <div id="qrcode"></div>
+
+    <a id="upiLink" href="#">Pay via UPI App</a>
+
+    <br><br>
+
+    <button onclick="closePayment()">Close</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+<script>
+const upiID = "9795449245-6@ybl";
+const merchantName = "MyShop";
+
+function openPayment(amount, product) {
+
+    let upiURL = `upi://pay?pa=${upiID}&pn=${merchantName}&am=${amount}&cu=INR`;
+
+    document.getElementById("qrModal").style.display = "flex";
+
+    document.getElementById("productName").innerText = product;
+    document.getElementById("amountText").innerText = "₹" + amount;
+
+    document.getElementById("qrcode").innerHTML = "";
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: upiURL,
+        width: 200,
+        height: 200
+    });
+
+    document.getElementById("upiLink").href = upiURL;
+}
+
+function closePayment() {
+    document.getElementById("qrModal").style.display = "none";
+}
+</script>
+<!-- PAYMENT SYSTEM END -->
     <div class="card"><h3>$25K</h3><button class="btn" onclick="openQR(99)">Pay ₹99</button></div>
     <div class="card"><h3>$100K</h3><button class="btn" onclick="openQR(199)">Pay $19999</button></div>
     <div class="card"><h3>$500K</h3><button class="btn" onclick="openQR(399)">Pay ₹399</button></div>
